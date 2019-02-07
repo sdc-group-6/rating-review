@@ -5,7 +5,7 @@
 ## Related Projects
 
   - https://github.com/abibasss/product-details
-  - https://github.com/abibasss/product_view
+  - https://github.com/abibasss/product-view
 
 ## Table of Contents
 
