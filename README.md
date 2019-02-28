@@ -1,6 +1,18 @@
 # Project Name
+CRUD API POINTS: 
+Shoes (Products)
+GET /reviews/:productId
 
-> Project description
+POST /reviews/:productId
+
+DELETE /reviews/:reviewID
+
+PUT /reviews/:reviewId
+
+Parameters
+Name	Type	Description
+review ID	string	Id of a specific review associated with product
+shoes ID	string	Id of a specific product
 
 ## Related Projects
 
