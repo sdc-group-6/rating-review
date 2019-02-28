@@ -1,6 +1,8 @@
 # Project Name
 CRUD API POINTS: 
-Shoes (Products)
+Product Reviews
+
+
 GET /reviews/:productId
 
 POST /reviews/:productId
