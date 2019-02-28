@@ -9,11 +9,6 @@ DELETE /reviews/:reviewID
 
 PUT /reviews/:reviewId
 
-Parameters
-Name	Type	Description
-review ID	string	Id of a specific review associated with product
-shoes ID	string	Id of a specific product
-
 ## Related Projects
 
   - https://github.com/abibasss/product-details
