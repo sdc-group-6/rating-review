@@ -1,23 +1,23 @@
-// var config = require("../knexfile");
-// var env = "development";
-// var knex = require("knex")(config[env]);
+var config = require("../knexfile");
+var env = "development";
+var knex = require("knex")(config[env]);
 
-const cassandra = require('cassandra-driver');
-const fs = require('fs');
-const pathToFile = __dirname + '/cassandra.csv';
-var cassanKnex = require("cassanknex")({
-  connection: {
-    contactPoints: ["127.0.0.1"]
-  }
-});
+// const cassandra = require('cassandra-driver');
+// const fs = require('fs');
+// const pathToFile = __dirname + '/cassandra.csv';
+// var cassanKnex = require("cassanknex")({
+//   connection: {
+//     contactPoints: ["127.0.0.1"]
+//   }
+// });
 
-cassanKnex.on("ready", function (err) {
+// cassanKnex.on("ready", function (err) {
 
-  if (err) {
-    console.error("Error Connecting to Cassandra Cluster", err);
-  }
-  else console.log("Cassandra Connected");
-});
+//   if (err) {
+//     console.error("Error Connecting to Cassandra Cluster", err);
+//   }
+//   else console.log("Cassandra Connected");
+// });
 
 
 
@@ -34,7 +34,7 @@ cassanKnex.on("ready", function (err) {
 
 
 
-//module.exports = knex;
+module.exports = knex;
 //will need to export all of my query funcs here
 
 // const Sequelize = require ('sequelize');
