@@ -1,31 +1,46 @@
 const express = require('express');
 const app = express();
-const {db, Reviews} = require ('../database/index.js')
-const mysql = require('mysql');
-const port = 8003;
+const cors = require("cors");
+var bodyParser = require('body-parser')
+const port = process.env.PORT || 8003;
+var db = require('../database/index.js')
+const cassandra = require('cassandra-driver');
+const cassanKnex = require("cassanknex")({
+  connection: {
+    contactPoints: ["127.0.0.1"]
+  }
+});
+// var config = require("../knexfile.js");
+// var env = "development";
+// var knex = require("knex")(config[env]);
 
 app.use(express.static(__dirname + '/../public'));
-app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-db.authenticate()
-  .then(() => console.log('db connected'))
-  .catch(err => console.log('err:', err))
 
-app.get('/reviews', (req, res) => {
-  Reviews.sync()
-  .then(() => {
-    return Reviews.findAll()
-  })
-  .then(reviews => res.json(reviews.slice(0, 3)))
-  .catch(err => console.log('index get', err))
-  // Reviews.findAll({}, function(err, reviews) {
-  //   if (err) {
-  //     res.send('error', err)
-  //   } else {
-  //     console.log('this is my index success', reviews)
-  //     res.json(reviews)
-  //   }
-  // })
+app.get('/reviews/:id', (req, res) => {
+  var startTime = Date.now();
+  var query = cassanKnex("reviewsdb");
+
+var startTime = Date.now();
+         query
+        .select()
+        .where("reviewid","=", req.params.id)
+        .from("reviews");
+        query.exec((err, result)=>{ if (err) {
+          console.log("error: ", err);
+        } else { res.json(result.rows)}});
+        console.log(`total time for Cassandra query: ${Date.now() - startTime} ms`);
+
+
+    // .then(reviews => {
+    //   var totalTime = Date.now()-startTime;
+    //   console.log(`Query returned ${reviews.length} reviews in ${totalTime} ms.`);
+    //   res.send(reviews);
+    // })
+    // .catch((err)=>{console.log('Getting error from server, error: '), err})
 });
 
 app.listen(port, () => {
