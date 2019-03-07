@@ -24,7 +24,7 @@ const Reviews = (props) => {
             <div className="review-opinion">{review.opinion}</div>
             <div className="review-review">{review.review}</div>
             <div className="review-recommend">
-              {review.recommend ? <div><span className="review-checkmark">&#10003;</span> <span>I recommend this product</span></div> : ''}
+              {review.rating >= 3 ? <div><span className="review-checkmark">&#10003;</span> <span>I recommend this product</span></div> : ''}
             </div>
             <div className="review-nickname-verify">
               <div className="review-nickname">{review.nickname}</div>

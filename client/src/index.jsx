@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   get() {
-    let id = Math.floor(Math.random() * (2000000));
+    let id = Math.floor(Math.random() * (1000000));
 
     $.ajax({
       type: 'GET',
@@ -39,7 +39,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>
+      <div id="reviews">
         <h3 className="review-header">Ratings & Reviews</h3>
         <div className="review-sort-on">SORT ON</div>
         <div className="review-button-container">
@@ -57,4 +57,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("reviews"));
