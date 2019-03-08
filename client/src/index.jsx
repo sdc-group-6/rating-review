@@ -10,6 +10,7 @@ class App extends React.Component {
       reviews: []
     }
     this.get = this.get.bind(this);
+    this.postNewReview.bind(this);
 
   }
 
@@ -36,6 +37,22 @@ class App extends React.Component {
 
   }
 
+  postNewReview() {
+    let id = Math.floor(Math.random() * 1000)
+    $.ajax({
+      type: 'POST',
+      url: "/postreview/" + id,
+      data:{
+      nickname: 'Tester55',
+      review: 'This test is working.',
+      rating: 3,
+      createdat: '2018-04-13T07:48:46.921-08:00',
+      index: id
+    },
+
+    })
+  }
+
 
   render () {
     return (
@@ -50,7 +67,7 @@ class App extends React.Component {
         <Reviews reviews={this.state.reviews} update={this.updateYesorNo}/>
         <div className="review-button-container">
           <button className="review-load-more">LOAD MORE<span className="review-arrow">&#8594;</span></button>
-          <button className="review-write">WRITE A REVIEW<span className="review-arrow">&#8594;</span></button>
+          <button className="review-write" onClick={this.postNewReview}>WRITE A REVIEW<span className="review-arrow">&#8594;</span></button>
         </div>
       </div>
     )

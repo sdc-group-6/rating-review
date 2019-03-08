@@ -1,15 +1,11 @@
+require('newrelic');
 const express = require('express');
 const app = express();
 const cors = require("cors");
 var bodyParser = require('body-parser')
 const port = process.env.PORT || 8003;
 var db = require('../database/index.js')
-// const cassandra = require('cassandra-driver');
-// const cassanKnex = require("cassanknex")({
-//   connection: {
-//     contactPoints: ["127.0.0.1"]
-//   }
-// });
+
 var config = require("../knexfile.js");
 var env = "development";
 var knex = require("knex")(config[env]);
@@ -36,6 +32,26 @@ app.get('/reviews/:id', (req, res) => {
     })
     .catch((err)=>{console.log('Not quite, we are getting the following error: '), err})
 });
+
+
+app.post('/postreview/:id', (req,res)=>{
+
+  knex("reviews")
+  .insert({
+    nickname: req.body.nickname,
+    review: req.body.review,
+    rating: req.body.rating,
+    createdat: req.body.createdat,
+    index: req.params.id,
+    h_yes: req.body.h_yes,
+    h_no: req.body.h_no
+      })
+  .then((res)=>{console.log('POST SUCCESSFUL')})
+  .catch((err)=>{console.log('Getting POST error: ', err)})
+
+
+
+})
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
