@@ -1,11 +1,11 @@
-// var config = require("../knexfile");
-// var env = "development";
-// var knex = require("knex")(config[env]);
+var config = require("../knexfile");
+var env = "development";
+var knex = require("knex")(config[env]);
 const faker = require("faker");
 const fs = require('fs');
-const pathToFile = __dirname + '/testSeed.csv';
-const cassandra = require('cassandra-driver');
-const cassanKnex = require("cassanknex");
+// const pathToFile = __dirname + '/testSeed.csv';
+// const cassandra = require('cassandra-driver');
+// const cassanKnex = require("cassanknex");
 
 
 // SEEDING FUNCTION FOR CASSANDRA ******************
@@ -63,6 +63,7 @@ function seedProducts() {
   const total = 40000;
   for (var j = 0; j < total; j++) {
     fakeProducts.push(createFakeProduct());
+    console.log('1 seed down');
   }
   return knex("items").insert(fakeProducts)
     .then(() => {
@@ -79,7 +80,6 @@ const createFakeReview = () => {
     nickname: faker.internet.userName(),
     review: faker.lorem.sentences(),
     rating: Math.floor(Math.random() * (5)),
-    recommend: faker.random.boolean(),
     createdat: faker.date.past(),
     index: Math.floor(Math.random() * (10000001)),
     h_yes: Math.floor(Math.random()* (40)),
@@ -93,6 +93,7 @@ const seedReviews= () => {
   const total = 10000;
   for (var j = 0; j < total; j++) {
     fakeReviews.push(createFakeReview());
+    console.log('1 record seeded');
   }
   return knex("reviews").insert(fakeReviews)
     .then(() => {
@@ -106,5 +107,5 @@ const seedReviews= () => {
  */
 
 
-seedReviews(); //will need to run many times.
+//will need to run many times.
 seedProducts(); // will need to run many times.
