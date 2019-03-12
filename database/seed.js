@@ -50,27 +50,27 @@ const fs = require('fs');
 
 
 // ********************************* SEEDING FOR POSTGRES
-const createFakeProduct = () => {
+// const createFakeProduct = () => {
 
-  return { // need to make this serial? auto increase
-    name: faker.commerce.productName()
-  }
+//   return { // need to make this serial? auto increase
+//     name: faker.commerce.productName()
+//   }
 
-}
+// }
 
-function seedProducts() {
-  const fakeProducts = [];
-  const total = 40000;
-  for (var j = 0; j < total; j++) {
-    fakeProducts.push(createFakeProduct());
-    console.log('1 seed down');
-  }
-  return knex("items").insert(fakeProducts)
-    .then(() => {
-      console.log('seeding completed')
-    })
+// function seedProducts() {
+//   const fakeProducts = [];
+//   const total = 40000;
+//   for (var j = 0; j < total; j++) {
+//     fakeProducts.push(createFakeProduct());
+//     console.log('1 seed down');
+//   }
+//   return knex("items").insert(fakeProducts)
+//     .then(() => {
+//       console.log('seeding completed')
+//     })
 
-}
+//}
 
 const createFakeReview = () => {
 
@@ -108,105 +108,103 @@ const seedReviews= () => {
 
 
 //will need to run many times.
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-seedProducts();
-
-
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
