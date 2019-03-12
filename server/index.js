@@ -46,11 +46,18 @@ app.post('/postreview/:id', (req,res)=>{
     h_yes: req.body.h_yes,
     h_no: req.body.h_no
       })
-  .then((res)=>{console.log('POST SUCCESSFUL')})
+  .then(response=>{res.send('Post request completed')})
   .catch((err)=>{console.log('Getting POST error: ', err)})
 
+})
 
+app.patch('updateCounter/:')
 
+app.delete('/:id', (req, res)=>{
+  knex("reviews")
+  .where({id: req.params.id})
+  .del()
+  .then(response=>{res.send("Review Has Been Deleted")})
 })
 
 app.listen(port, () => {

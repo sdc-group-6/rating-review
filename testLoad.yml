@@ -1,8 +1,8 @@
 config:
   target: 'http://localhost:8003'
   phases:
-    - duration: 10
-      arrivalRate: 1
+    - duration: 1000
+      arrivalRate: 800
   defaults:
     headers:
       x-my-service-auth: '987401838271002188298567'

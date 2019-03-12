@@ -34,8 +34,8 @@ const Reviews = (props) => {
               <span className="review-reply">Reply</span>
               <div className="review-helpful">
                 <span className="review-helpful-text">Was this review helpful?</span>
-                <button className={`review-boolean yes`} onClick ={props.update}><u id={review.id}>Yes</u>{review.h_yes? `(${review.h_yes})` : `(${Math.floor(Math.random()*40)})`}</button>
-                <button className={`review-boolean no`}><u  id={review.id}>No</u>{review.h_no? `(${review.h_yes})` : `(${Math.floor(Math.random()*40)})`}</button>
+                <button className={`review-boolean yes`} onClick ={props.update} id='yes'><u>Yes</u>({review.h_yes})</button>
+                <button className={`review-boolean no`}><u>No</u>({review.h_yes})</button>
               </div>
             </div>
           </div>

@@ -10,7 +10,8 @@ class App extends React.Component {
       reviews: []
     }
     this.get = this.get.bind(this);
-    this.postNewReview.bind(this);
+    this.postNewReview = this.postNewReview.bind(this);
+    this.deleteReview = this.deleteReview.bind(this);
 
   }
 
@@ -19,6 +20,7 @@ class App extends React.Component {
   }
 
   get() {
+
     let id = Math.floor(Math.random() * (1000000));
 
     $.ajax({
@@ -37,8 +39,9 @@ class App extends React.Component {
 
   }
 
+
   postNewReview() {
-    let id = Math.floor(Math.random() * 1000)
+    let id = 101;
     $.ajax({
       type: 'POST',
       url: "/postreview/" + id,
@@ -51,6 +54,19 @@ class App extends React.Component {
     },
 
     })
+  }
+
+  deleteReview(e) {
+    let id = e.target.id;
+
+    $.ajax({
+      type: "DELETE",
+      url: "/" + id,
+      success: (results)=>{console.log("successful delete")},
+      error: (err)=>{console.log('Error deleting: ', err)}
+    })
+
+
   }
 
 
