@@ -98,7 +98,7 @@ const seedReviews= () => {
     .then(() => {
       console.log('seeding completed')
     })
-    console.log('All seeding has finished');
+
 
 }
 
