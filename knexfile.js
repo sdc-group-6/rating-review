@@ -6,7 +6,7 @@ module.exports = {
       user: 'postgres',   //default user?
       password: '',
       port: '5432',
-      database: 'reviews_ratings_db' // my pg database
+      database: 'reviewsdb' // my pg database
     },
     seeds: {
       directory: __dirname + "/database/seed"
