@@ -30,7 +30,7 @@ app.get('/reviews/:id', (req, res) => {
     .then(reviews => {
       res.send(reviews);
     })
-    .catch((err)=>{console.log('Not quite, we are getting the following error: '), err})
+    .catch((err)=>{console.log('Not quite, we are getting the following error on GET: '), err})
 });
 
 

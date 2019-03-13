@@ -25,7 +25,7 @@ class App extends React.Component {
 
     $.ajax({
       type: 'GET',
-      url: 'ec2-13-56-197-6.us-west-1.compute.amazonaws.com/reviews/' + id,
+      url: '/reviews/' + id,
       success: (reviews => {
         this.setState({
           reviews: reviews
@@ -44,7 +44,7 @@ class App extends React.Component {
     let id = 101;
     $.ajax({
       type: 'POST',
-      url: "ec2-13-56-197-6.us-west-1.compute.amazonaws.com/postreview/",
+      url: "/postreview/" + id,
       data:{
       nickname: 'Tester55',
       review: 'This test is working.',
@@ -61,7 +61,7 @@ class App extends React.Component {
 
     $.ajax({
       type: "DELETE",
-      url: "ec2-13-56-197-6.us-west-1.compute.amazonaws.com/" + id,
+      url: "/" + id,
       success: (results)=>{console.log("successful delete")},
       error: (err)=>{console.log('Error deleting: ', err)}
     })
