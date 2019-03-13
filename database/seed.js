@@ -98,6 +98,7 @@ const seedReviews= () => {
     .then(() => {
       console.log('seeding completed')
     })
+    .catch((err)=> {console.log('error: ', err)})
 
 
 }
