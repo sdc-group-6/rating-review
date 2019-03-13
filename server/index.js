@@ -22,7 +22,7 @@ app.all('/*', function(req, res, next) {
 });
 
 
-app.get('ec2-13-56-197-6.us-west-1.compute.amazonaws.com/reviews/:id', (req, res) => {
+app.get('/reviews/:id', (req, res) => {
 
   return knex
   .from("reviews")
