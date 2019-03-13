@@ -120,13 +120,4 @@ seedReviews();
 seedReviews();
 seedReviews();
 seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
+
