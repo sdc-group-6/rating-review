@@ -4,7 +4,7 @@ module.exports = {
     connection: {
       host: 'ec2-13-56-197-6.us-west-1.compute.amazonaws.com',
       user: 'postgres',   //default user?
-      password: 'newpass',
+      password: '',
       port: '5432',
       database: 'reviewsdata' // my pg database
     },
