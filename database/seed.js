@@ -90,7 +90,7 @@ const createFakeReview = () => {
 
 const seedReviews= () => {
   const fakeReviews = [];
-  const total = 10000;
+  const total = 100;
   for (var j = 0; j < total; j++) {
     fakeReviews.push(createFakeReview());
     console.log('1 record seeded');
@@ -109,27 +109,4 @@ const seedReviews= () => {
 
 //will need to run many times.
 seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
+
