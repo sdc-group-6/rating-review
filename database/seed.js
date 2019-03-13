@@ -108,6 +108,19 @@ const seedReviews= () => {
 
 //will need to run many times.
 seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+seedReviews();
+
 
 
 
