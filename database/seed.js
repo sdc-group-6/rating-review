@@ -90,10 +90,9 @@ const createFakeReview = () => {
 
 const seedReviews= () => {
   const fakeReviews = [];
-  const total = 10000;
+  const total = 8000;
   for (var j = 0; j < total; j++) {
     fakeReviews.push(createFakeReview());
-    console.log('1 record seeded');
   }
   return knex("reviews").insert(fakeReviews)
     .then(() => {
@@ -109,7 +108,7 @@ const seedReviews= () => {
 
 //will need to run many times.
 seedReviews();
-seedReviews();
+
 
 
 
