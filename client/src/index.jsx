@@ -30,6 +30,7 @@ class App extends React.Component {
         this.setState({
           reviews: reviews
         })
+        console.log('Get success')
 
       }),
       error: (err => {
@@ -52,6 +53,9 @@ class App extends React.Component {
       createdat: '2018-04-13T07:48:46.921-08:00',
       index: id
     },
+    success: function(res){
+      console.log('good work posting')
+    }
 
     })
   }
