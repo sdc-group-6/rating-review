@@ -26,7 +26,7 @@ app.get('/reviews/:id', (req, res) => {
 
   return knex
   .from("reviews")
-    .where("index", req.params.id)
+    .where("id", req.params.id)
     .then(reviews => {
       res.send(reviews);
     })
