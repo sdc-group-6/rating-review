@@ -2,7 +2,7 @@ module.exports = {
   development: {
     client: "postgresql",
     connection: {
-      host: 'ec2-13-56-197-6.us-west-1.compute.amazonaws.com',
+      host: 'http://ec2-13-56-197-6.us-west-1.compute.amazonaws.com',
       user: 'postgres',   //default user?
       password: 'testpass',
       port: '5432',
