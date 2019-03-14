@@ -81,7 +81,7 @@ const createFakeReview = () => {
     review: faker.lorem.sentences(),
     rating: Math.floor(Math.random() * (5)),
     createdat: faker.date.past(),
-    index: Math.floor(Math.random() * (2000001)),
+    index: Math.floor(Math.random() * (2000)),
     h_yes: Math.floor(Math.random()* (40)),
     h_no: Math.floor(Math.random()* (40)),
   }
@@ -110,15 +110,5 @@ const seedReviews= () => {
 
 //will need to run many times.
 seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
-seedReviews();
+
 
