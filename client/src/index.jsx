@@ -25,7 +25,7 @@ class App extends React.Component {
 
     $.ajax({
       type: 'GET',
-      url: '/reviews/' + id,
+      url: 'http://ec2-13-56-197-6.us-west-1.compute.amazonaws.com/reviews/' + id,
       success: (reviews => {
         this.setState({
           reviews: reviews
