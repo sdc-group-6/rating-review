@@ -30,7 +30,7 @@ class App extends React.Component {
         this.setState({
           reviews: reviews
         })
-        console.log('Get success')
+        console.log('Get success id: ', id)
 
       }),
       error: (err => {
