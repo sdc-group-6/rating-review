@@ -22,7 +22,7 @@ class App extends React.Component {
   get() {
 
     let id = 2106695;
-    console.log(id);
+    console.log('id = ', id);
 
     $.ajax({
       type: 'GET',
