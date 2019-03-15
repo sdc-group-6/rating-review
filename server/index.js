@@ -8,6 +8,8 @@ var db = require('../database/index.js');
 const redis = require('redis');
 
 let client = redis.createClient();
+client.on('connect', ()=>{console.log('connected to redis')});
+client.on('error', (error)=>{console.log('not connected to redis', error)})
 
 var config = require("../knexfile.js");
 var env = "development";
