@@ -22,6 +22,7 @@ class App extends React.Component {
   get() {
 
     let id = Math.floor(Math.random() * (10000000));
+    console.log(id);
 
     $.ajax({
       type: 'GET',
@@ -30,7 +31,7 @@ class App extends React.Component {
         this.setState({
           reviews: reviews
         })
-        console.log('Get success id: ', id)
+        console.log('Get success')
 
       }),
       error: (err => {
