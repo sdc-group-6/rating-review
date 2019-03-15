@@ -13,7 +13,7 @@ const pathToFile = __dirname + '/testSeed.csv';
 
 function writeFakeData() {
 
-  fs.writeFileSync(pathToFile, 'reviewid|createdat|h_yes|h_no|nickname|rating|review\n');
+  fs.writeFileSync(pathToFile, 'index|createdat|h_yes|h_no|nickname|rating|review\n');
 
 
   var chunk = 0;

@@ -21,7 +21,7 @@ class App extends React.Component {
 
   get() {
 
-    let id = Math.floor(Math.random() * (2000));
+    let id = Math.floor(Math.random() * (10000000));
 
     $.ajax({
       type: 'GET',
