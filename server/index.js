@@ -11,9 +11,9 @@ const redis = require('redis');
 // client.on('connect', () => {
 //   console.log('connected to redis')
 // });
-client.on('error', (error) => {
-  console.log('not connected to redis', error)
-})
+// client.on('error', (error) => {
+//   console.log('not connected to redis', error)
+// })
 
 var config = require("../knexfile.js");
 var env = "development";
