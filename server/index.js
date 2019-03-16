@@ -5,15 +5,6 @@ const cors = require("cors");
 var bodyParser = require('body-parser')
 const port = process.env.PORT || 8003;
 var db = require('../database/index.js');
-const redis = require('redis');
-
-// let client = redis.createClient();
-// client.on('connect', () => {
-//   console.log('connected to redis')
-// });
-// client.on('error', (error) => {
-//   console.log('not connected to redis', error)
-// })
 
 var config = require("../knexfile.js");
 var env = "development";
@@ -25,41 +16,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
-// const findProductCache = (req, res) => { 
-
-//   let id = req.params.itemId; 
-//   client.get(req.params.itemId, (err, data) => { 
-
-//     if (data) { 
-
-//       res.send(data); 
-//     } else { 
-
-//       getProduct(id).then(product => { 
-//         client.setex(id, 120, JSON.stringify(product)); 
-//         res.send(product); 
-//       }); 
-//     } 
-//   }); 
-// }; 
-// app.get('/products/:itemId', findProductCache); 
-
-// let redisMiddleware = (req, res, next) => {
-//   let key = "__expIress__" + req.originalUrl || req.url;
-//   client.get(key, function(err, reply) {
-//     if (reply) {
-//       res.json(reply);
-//     } else {
-//       res.sendResponse = res.send;
-//       res.send = (body) => {
-//         client.set(key, JSON.stringify(body));
-//         res.sendResponse(JSON.parse(body));
-//       }
-//       next();
-//     }
-//   });
-// };
 
 
 app.all('/*', function(req, res, next) {
@@ -84,7 +40,7 @@ app.get('/reviews/:id', (req, res) => {
 });
 
 
-app.post('/postreview/:id',(req, res) => {
+app.post('/postreview/:id', (req, res) => {
 
   knex("reviews")
     .insert({
