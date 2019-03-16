@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({
 let redisMiddleware = (req, res, next) => {
   let key = "__expIress__" + req.originalUrl || req.url;
   client.get(key, function(err, reply) {
+    console.log(reply);
     if (reply) {
       res.send(reply);
     } else {
