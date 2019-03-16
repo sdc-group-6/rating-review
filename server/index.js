@@ -25,9 +25,8 @@ app.use(bodyParser.urlencoded({
 let redisMiddleware = (req, res, next) => {
   let key = "__expIress__" + req.originalUrl || req.url;
   client.get(key, function(err, reply) {
-    console.log(reply);
     if (reply) {
-      res.send(JSON.parse(reply));
+      res.send(reply);
     } else {
       res.sendResponse = res.send;
       res.send = (body) => {
@@ -40,7 +39,7 @@ let redisMiddleware = (req, res, next) => {
 };
 
 
-app.all('/*', function(req, res, next) {
+app.all('/*', redisMiddleware, function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
