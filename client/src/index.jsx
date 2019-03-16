@@ -20,8 +20,10 @@ class App extends React.Component {
   }
 
   get() {
+    //this need to be 2 mil. webpack and push
 
-    let id = Math.floor(Math.random() * (10000000));
+
+    let id = Math.floor(Math.random() * (2000000));
     console.log(id);
 
     $.ajax({
