@@ -27,7 +27,7 @@ let redisMiddleware = (req, res, next) => {
   client.get(key, function(err, reply) {
     console.log(reply);
     if (reply) {
-      res.send(reply);
+      res.json(reply);
     } else {
       res.sendResponse = res.send;
       res.send = (body) => {
