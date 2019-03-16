@@ -45,21 +45,21 @@ app.use(bodyParser.urlencoded({
 // }; 
 // app.get('/products/:itemId', findProductCache); 
 
-let redisMiddleware = (req, res, next) => {
-  let key = "__expIress__" + req.originalUrl || req.url;
-  client.get(key, function(err, reply) {
-    if (reply) {
-      res.json(reply);
-    } else {
-      res.sendResponse = res.send;
-      res.send = (body) => {
-        client.set(key, JSON.stringify(body));
-        res.sendResponse(JSON.parse(body));
-      }
-      next();
-    }
-  });
-};
+// let redisMiddleware = (req, res, next) => {
+//   let key = "__expIress__" + req.originalUrl || req.url;
+//   client.get(key, function(err, reply) {
+//     if (reply) {
+//       res.json(reply);
+//     } else {
+//       res.sendResponse = res.send;
+//       res.send = (body) => {
+//         client.set(key, JSON.stringify(body));
+//         res.sendResponse(JSON.parse(body));
+//       }
+//       next();
+//     }
+//   });
+// };
 
 
 app.all('/*', function(req, res, next) {
@@ -70,7 +70,7 @@ app.all('/*', function(req, res, next) {
 
 
 
-app.get('/reviews/:id', redisMiddleware, (req, res) => {
+app.get('/reviews/:id', (req, res) => {
 
   return knex
     .from("reviews")
@@ -84,7 +84,7 @@ app.get('/reviews/:id', redisMiddleware, (req, res) => {
 });
 
 
-app.post('/postreview/:id', redisMiddleware, (req, res) => {
+app.post('/postreview/:id',(req, res) => {
 
   knex("reviews")
     .insert({
