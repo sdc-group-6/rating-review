@@ -28,6 +28,7 @@ class App extends React.Component {
       type: 'GET',
       url: '/reviews/' + id,
       success: (reviews => {
+        reviews = JSON.parse(reviews);
         this.setState({
           reviews: reviews
         })

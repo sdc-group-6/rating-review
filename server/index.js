@@ -49,7 +49,7 @@ let redisMiddleware = (req, res, next) => {
   let key = "__expIress__" + req.originalUrl || req.url;
   client.get(key, function(err, reply) {
     if (reply) {
-      res.send(reply);
+      res.json(reply);
     } else {
       res.sendResponse = res.send;
       res.send = (body) => {
